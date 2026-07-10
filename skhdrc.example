@@ -1,0 +1,14 @@
+# skhd — hotkeys globais para os scripts deste repo
+# Copie o conteúdo relevante para ~/.config/skhd/skhdrc
+
+# ⌃⌥⌘↓ → abre uma janela nova do Chrome e snapa na metade direita
+ctrl + alt + cmd - down : osascript $HOME/Library/Scripts/chrome-split-side-by-side.applescript
+
+# ⌃⌥⌘→ → destaca a aba ativa numa janela nova e snapa na metade direita
+ctrl + alt + cmd - right : osascript $HOME/Library/Scripts/chrome-detach-tab-right.applescript
+
+# ⌃⌥⌘⇧M → traz o foco para a aba do Google Meet
+ctrl + alt + cmd + shift - m : osascript $HOME/Library/Scripts/chrome-focus-meet.applescript
+
+# ⌃⌥⌘⇧C → traz o foco para a aba do Google Calendar
+ctrl + alt + cmd + shift - c : osascript $HOME/Library/Scripts/chrome-focus-calendar.applescript
