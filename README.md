@@ -1,3 +1,5 @@
+**Português** · [English](README.en.md)
+
 # scripts
 
 Scripts de automação do Google Chrome no macOS via AppleScript, disparados por atalhos globais com [skhd](https://github.com/koekeishiya/skhd).
