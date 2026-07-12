@@ -2,7 +2,7 @@
 
 # scripts
 
-Google Chrome automation scripts for macOS via AppleScript, triggered by global hotkeys with [skhd](https://github.com/koekeishiya/skhd).
+Automation scripts and utilities for macOS: Google Chrome automation via AppleScript (triggered by global hotkeys with [skhd](https://github.com/koekeishiya/skhd)) and a command-line utility to restart Logi Options+.
 
 ## Scripts
 
@@ -43,3 +43,17 @@ Google Chrome automation scripts for macOS via AppleScript, triggered by global 
 
 - **The window scripts take ~1.5 s.** The snap acts on the focused window — if you click another window mid-run, focus shifts and the snap misses its target. Press the hotkey and wait ~1 s without clicking anything.
 - **Rectangle action names in skhd use kebab-case** (`right-half`, `left-half`). Hex keycodes must be uppercase in skhd — that's why the `down` and `right` keys are referenced by name instead of hex codes.
+
+## Utilities (CLI)
+
+| Script | Usage | What it does |
+|---|---|---|
+| `logr.sh` | `./logr.sh` (or `logr` alias) | Restarts Logi Options+ (UI + agent + the `LogiRightSight`/`LogiPluginService` helpers) in the **background**, without bringing the app to the front or stealing focus. Handy when a Logitech mouse/keyboard freezes. |
+
+To use it as an alias, add to `~/.zshrc`:
+
+```sh
+alias logr='killall logioptionsplus logioptionsplus_agent LogiRightSight LogiPluginService 2>/dev/null; open -g -a logioptionsplus'
+```
+
+Requires [Logi Options+](https://www.logitech.com/software/logi-options-plus.html) installed. The `open` `-g` flag reopens the app in the background; use `-gj` to launch it fully hidden.
